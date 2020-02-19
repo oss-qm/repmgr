@@ -35,6 +35,9 @@ lib*.pc
 /config.log
 /config.status
 /config.h
+/config.h.in
+/config.h.in~
+/configure
 /repmgr_version.h
 
 # test output
