@@ -4920,6 +4920,12 @@ add_monitoring_record(PGconn *primary_conn,
 {
 	PQExpBufferData query;
 
+	if (!last_xact_replay_timestamp || (strcmp(last_xact_replay_timestamp,"")))
+	{
+		log_warning(_("add_minitoring_record() last_xact_replay_timestamp is empty"))
+		return;
+	}
+
 	initPQExpBuffer(&query);
 
 	appendPQExpBuffer(&query,
